@@ -1,6 +1,6 @@
-# Labour Booking System
+# Rojgar Setu – Labour Booking System
 
-A static React web application (Uber-like UI) for booking labour services. **College academic project** – no backend, database, or real authentication.
+A static React web application (Uber-like UI) for booking labour services. **College academic project** – no backend, database, or real authentication. **Installable on mobile** as a Progressive Web App (PWA).
 
 ## Features
 
@@ -9,6 +9,7 @@ A static React web application (Uber-like UI) for booking labour services. **Col
 - **Customer dashboard**: Browse labours, filter by skill, search, book labour, view My Bookings
 - **Labour dashboard**: Profile, availability status, booking requests, earnings summary, edit profile
 - **Static auth**: Dummy login/register; redirect to correct dashboard by role
+- **PWA**: Install on phone (Android / iOS) from the browser; runs standalone with offline-friendly caching
 
 ## Tech Stack
 
@@ -17,6 +18,7 @@ A static React web application (Uber-like UI) for booking labour services. **Col
 - Context API (auth state)
 - Tailwind CSS
 - Vite
+- **vite-plugin-pwa** (Progressive Web App: manifest, service worker, install prompt)
 
 ## Setup
 
@@ -47,30 +49,23 @@ Or register a new account and choose **Register as Customer** or **Register as L
 - **/labour** – Labour dashboard (requests, earnings)
 - **/labour/profile** – Edit profile (UI only)
 
-## Build & Install on Mobile (PWA)
-
-The app is a **Progressive Web App (PWA)**. You can install it on your phone like a native app.
-
-1. **Build and host** the app (e.g. deploy to Vercel, Netlify, or any static host):
-
-   ```bash
-   npm run build
-   ```
-
-   Then upload the `dist` folder or connect your repo to a host.
-
-2. **Install on phone**
-   - **Android**: Open the app URL in Chrome → menu (⋮) → “Install app” or “Add to Home screen”.
-   - **iPhone/iPad**: Open in Safari → Share → “Add to Home Screen”.
-
-When opened from the home screen, the app runs in standalone mode (full screen, no browser UI).
-
-## Build (local)
+## Build
 
 ```bash
 npm run build
-npm run preview
+npm run preview   # optional: test production build locally at http://localhost:4173
 ```
+
+Output is in the `dist/` folder. Deploy `dist/` to any static host (Vercel, Netlify, GitHub Pages, etc.).
+
+## Install on Mobile (PWA)
+
+The app is a **Progressive Web App (PWA)**. After deploying, users can install it on their phone:
+
+1. **Android**: Open the app URL in **Chrome** → menu (⋮) → **Install app** or **Add to Home screen**.
+2. **iPhone / iPad**: Open in **Safari** → **Share** → **Add to Home Screen**.
+
+When opened from the home screen, the app runs in **standalone** mode (full screen, no browser UI). On Android Chrome, an in-app install banner may also appear.
 
 ## Purpose
 
